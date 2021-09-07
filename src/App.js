@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from 'react-redux'
+import styled from 'styled-components';
+import MovieList from "../src/components/movie-list";
+import store from "./store"
+import Header from "../src/components/header"
+import Actions from "../src/components/actions"
+import Search from "../src/components/search"
+import Filter from "../src/components/filter"
+import "../src/css/styles.css"
+
+const AppStyled = styled.div``
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+      <AppStyled>
+        <Provider store={store}>
+          <Header/>
+          <Actions>
+            <Search/>
+            <Filter/>
+          </Actions>
+          <MovieList />
+        </Provider>
+      </AppStyled>
+
+    );
+
 }
 
 export default App;
