@@ -20,7 +20,7 @@ class Header extends React.Component {
     return (
       <HeaderStyled>
         <Wrapper>
-          <HeaderLogo src="/images/logo.png" />
+          <HeaderLogo src="./images/logo.png" />
         </Wrapper>
       </HeaderStyled>
     )
